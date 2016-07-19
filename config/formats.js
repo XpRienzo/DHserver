@@ -1657,7 +1657,7 @@ exports.Formats = [
 				this.add('c|~Ransei|yo');
 			}
 			if(name === 'xprienzo') {
- 				this.add('c|⚔XpRienzo|Wait, was I supposed to do something?');
+ 				this.add('c|⚔XpRienzo ☑-☑|Wait, was I supposed to do something?');
  			}
 			if (name === 'atomicllamas') {
 				this.add('c|&atomicllamas|(celebrate)(dog)(celebrate)');
@@ -2219,10 +2219,10 @@ exports.Formats = [
 				this.add('c|@The God of Haxorus|My own hax against me -3-');
 			}
 			if (name === 'charizard8888') {
-				this.add('c|~Spandan|I\'m Outta here!');
+				this.add('c|~charizard8888|I\'m Outta here!');
 			}
 			if (name === 'xprienzo') {
- 				this.add('c|⚔XpRienzo|Bleh');
+ 				this.add('c|⚔XpRienzo ☑-☑|Bleh');
  			}
  			if (name === 'ransei') {
  				this.add('c|~Ransei|ripsei');
