@@ -2059,7 +2059,7 @@ exports.BattleMovedex = {
 					spe: 1,
 				},
 			},
-		}
+		},
 		onHit: function (target, source) {
 			if (this.random(2) === 1) target.trySetStatus('brn', source);
 		},
