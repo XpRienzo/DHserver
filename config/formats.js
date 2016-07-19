@@ -1645,7 +1645,7 @@ exports.Formats = [
 				this.add('c|~Spandan|o shit waddup!');
 			}
 			if(name === 'thegodofhaxorus') {
-				this.add('c|@The God of Haxorus|Hi! I'm a **Hax**orus :3');
+				this.add('c|@The God of Haxorus|Hi! I\'m a **Hax**orus :3');
 			}
 			if(name === 'loominite') {
 				this.add('c|&Loominite|Okay, lets go :I');
