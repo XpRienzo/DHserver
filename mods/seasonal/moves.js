@@ -4811,10 +4811,14 @@ exports.BattleMovedex = {
 		},
 		willCrit:true,
 		contestType:"Cool",
-		onPrepareHit: function (target, source) {
+		onTryHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "Judgment", target);
 		},
+		/*onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Judgment", target);
+		},*/
 	},
 	// Frysinger
 	zapconfirmed: {
