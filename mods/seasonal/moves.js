@@ -4793,15 +4793,14 @@ exports.BattleMovedex = {
 		type: "Flying",
 	},
 	legendsambition: {
-		id:"legendsambition",
-		name:"Legend's Ambition",
+		accuracy:100,
 		basepower:180,
+		category:"Special",
+		id:"legendsambition",
+		isViable:true,
+		name:"Legend's Ambition",
 		pp:8,
 		flags: {protect: 1, mirror: 1},
-		category:'Special',
-		accuracy:100,
-		isViable:true,
-		isNonstandard: true,
 		priority:1,
 		type:"Dragon",
 		target:"normal",
@@ -4810,6 +4809,7 @@ exports.BattleMovedex = {
 				spe: -1,
 			},
 		},
+		willCrit:true,
 		contestType:"Cool",
 		onPrepareHit: function (target, source) {
 			this.attrLastMove('[still]');
