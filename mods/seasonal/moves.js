@@ -4793,6 +4793,30 @@ exports.BattleMovedex = {
 		type: "Flying",
 	},
 	legendsambition: {
+		accuracy: 100,
+		basePower: 180,
+		category: "Special",
+		id: "legendsambition",
+		isNonstandard: true,
+		name: "Legend\'s Ambition",
+		pp: 5,
+		priority: 1,
+		flags: {protect: 1, mirror: 1},
+		onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Judgment", target);
+		},
+		self: {
+			boosts: {
+				spe: -1,
+			},
+		},
+		willCrit:true,
+		contestType:"Cool",
+		target: "normal",
+		type: "Dragon",
+	},
+	/*legendsambition: {
 		accuracy:100,
 		basepower:180,
 		category:"Special",
@@ -4815,11 +4839,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "Judgment", target);
 		},
-		/*onPrepareHit: function (target, source) {
-			this.attrLastMove('[still]');
-			this.add('-anim', source, "Judgment", target);
-		},*/
-	},
+	},*/
 	// Frysinger
 	zapconfirmed: {
 		accuracy: 100,
