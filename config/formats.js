@@ -1651,7 +1651,7 @@ exports.Formats = [
 				this.add('c|&Loominite|Okay, lets go :I');
 			}
 			if(name === 'charizard8888') {
-				this.add('c|&charizard8888|It's **Outragin' Time !!**');
+				this.add('c|&charizard8888|It\'s **Outragin\' Time !!**');
 			}
 			if(name === 'ransei') {
 				this.add('c|~Ransei|yo');
