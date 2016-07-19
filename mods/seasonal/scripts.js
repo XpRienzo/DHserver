@@ -5,7 +5,7 @@ exports.BattleScripts = {
 		let team = [];
 		let variant = (this.random(2) === 1);
 		let sets = {
-			'Acast': {
+			/*'Acast': {
 				species: 'Gourgeist-Super', ability: 'Prankster', item: 'Mental Herb', gender: 'M',
 				moves: ['willowisp', 'recover', ['seedbomb', 'shadowstrike'][this.random(2)]],
 				signatureMove: 'Needs More Screens',
@@ -184,13 +184,13 @@ exports.BattleScripts = {
 				moves: ['precipiceblades', ['recover', 'stockpile', 'swordsdance'][this.random(3)], 'extremespeed', 'explosion'],
 				signatureMove: "Forcewin",
 				evs: {hp:4, atk:252, spe:252}, nature: 'Adamant',
-			},
+			},*/
 			'charizard8888': {
 				species: 'Charizard-Mega-X', ability: 'Refrigerate', item: 'Charizardite X', gender: 'M',
 				moves: ['fakeout', 'extremespeed', 'earthquake'],
 				signatureMove: "ggm8",
 				evs: {spd:4, atk:252, spe:252}, nature: 'Jolly',
-			},
+			},/*
 			'Ciran': {
 				species: 'Rapidash', ability: 'Defiant', item: 'Life Orb', gender: 'N',
 				moves: ['vcreate', 'zenheadbutt', 'knockoff'],
@@ -616,7 +616,7 @@ exports.BattleScripts = {
 				moves: ['stealthrock', 'perishsong', 'nuzzle'],
 				signatureMove: "Retreat",
 				evs: {def:4, spa:252, spe:252}, nature: 'Timid',
-			},
+			},*/
 			'Ransei': {
 				species: 'Rayquaza', ability: 'Wonder Breaker', item: 'Life Orb', gender: ['M'],shiny:true,
 				moves: ['dragonascent', 'tailglow', 'dracometeor'],
