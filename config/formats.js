@@ -2225,7 +2225,7 @@ exports.Formats = [
 				this.add('c|@The God of Haxorus|My own hax against me -3-');
 			}
 			if (name === 'charizard8888') {
-				this.add('c|~charizard8888|I\'m Outta here!');
+				this.add('c|&charizard8888|I\'m Outta here!');
 			}
 			if (name === 'xprienzo') {
  				this.add('c|⚔XpRienzo ☑-☑|Bleh');
