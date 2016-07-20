@@ -647,6 +647,10 @@
   .chat.chatmessage-charizard8888  strong {
     color:orange !important;
   }
+  
+.chat.chatmessage-solarstatics  strong {
+    color:red !important;
+  }
 
 .chat.chatmessage-clawliet  strong { 
     color:blue !important;
