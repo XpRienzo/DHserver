@@ -606,7 +606,7 @@ exports.BattleScripts = {
 				evs: {hp:4, spa:252, spe:252}, ivs: {atk:0}, nature: 'Timid',
 			},*/
 			'PI EddyChomp': {
-				species: 'Garchomp-Mega', ability: 'EpicClaws', item: 'Leftovers',
+				species: 'Garchomp-Mega', ability: 'Epic Claws', item: 'Leftovers',
 				moves: ['precipiceblades', 'dragonclaw', 'sacredfire'],
 				signatureMove: "evalchomp",
 				evs: {atk:252, def:4, spe:252}, nature: 'Adamant',
