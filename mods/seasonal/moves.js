@@ -34,9 +34,8 @@ exports.BattleMovedex = {
 		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
 		self: {boosts: {spe:1, atk:1, def:1}},
 		secondary: false,
-		sideCondition: 'luckychant',
 		onHit: function (target, source) {
-			target.side.addSideCondition(['spikes', 'toxicspikes'][this.random(2)], source, move);
+			target.side.addSideCondition('toxicspikes', source, move);
 			if (source.name === 'PI EddyChomp') this.add("c|&PI EddyChomp|Wait guys, powering up! Listen to this: https://www.youtube.com/watch?v=A0fAuX8jiPk while you're waiting! :)");
 		},
 		onModifyMove: function (move, pokemon, target) {
