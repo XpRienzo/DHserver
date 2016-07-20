@@ -89,6 +89,43 @@ exports.BattleAbilities = {
 		name: "Baitkai",
 		rating: 2,
 	},
+	epicclaws: {
+		onModifyAtkPriority: 5,
+		onModifyAtk: function (atk) {
+			return this.chainModify(1.5);
+		},
+		onTryHitPriority: 1,
+		onTryHit: function (target, source, move) {
+			if (target === source || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			let newMove = this.getMoveCopy(move.id);
+			newMove.hasBounced = true;
+			this.useMove(newMove, target, source);
+			return null;
+		},
+		onAllyTryHitSide: function (target, source, move) {
+			if (target.side === source.side || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			let newMove = this.getMoveCopy(move.id);
+			newMove.hasBounced = true;
+			this.useMove(newMove, this.effectData.target, source);
+			return null;
+		},
+		onBasePowerPriority: 8,
+		onBasePower: function (basePower, attacker, defender, move) {
+			if (move.flags['contact']) {
+				return this.chainModify([0x14CD, 0x1000]);
+			}
+		},
+		effect: {
+			duration: 1,
+		},
+		id: "epicclaws",
+		name: "Epic Claws",
+		rating: 2,
+	},
 	// Frysinger
 	funhouse: {
 		onStart: function (source) {

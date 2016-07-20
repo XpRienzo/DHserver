@@ -22,6 +22,41 @@ exports.BattleMovedex = {
 		target: "normal",
 		type: "Normal",
 	},
+	//PI Eddy Chomp
+	evalchomp: {
+		accuracy: 100,
+		category: "Status",
+		id: "evalchomp",
+		isNonstandard: true,
+		name: "evalchomp",
+		pp: 5,
+		priority: 2,
+		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
+		self: {boosts: {spe:1, atk:1, def:1}},
+		secondary: false,
+		sideCondition: 'luckychant',
+		onHit: function (target, source) {
+			target.side.addSideCondition(['spikes', 'toxicspikes'][this.random(2)], source, move);
+			if (source.name === 'PI EddyChomp') this.add("c|&PI EddyChomp|Wait guys, powering up! Listen to this: https://www.youtube.com/watch?v=A0fAuX8jiPk while you're waiting! :)");
+		},
+		onModifyMove: function (move, pokemon, target) {
+			move.type = '???';
+		},
+		effect: {
+			duration: 5,
+			onStart: function (side) {
+				this.add('-sidestart', side, 'move: evalchomp'); // "The Lucky Chant shielded [side.name]'s team from critical hits!"
+			},
+			onCriticalHit: false,
+			onResidualOrder: 21,
+			onResidualSubOrder: 5,
+			onEnd: function (side) {
+				this.add('-sideend', side, 'move: evalchomp'); // "[side.name]'s team's Lucky Chant wore off!"
+			},
+		},
+		target: "normal",
+		type: "Normal",
+	},
 	// Aurora
 	aerialfury: {
 		accuracy: 100,
