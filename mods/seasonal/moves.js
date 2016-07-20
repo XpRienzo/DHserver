@@ -4794,7 +4794,7 @@ exports.BattleMovedex = {
 	},
 	legendsambition: {
 		accuracy: 100,
-		basePower: 180,
+		basePower: 120,
 		category: "Special",
 		id: "legendsambition",
 		isNonstandard: true,
