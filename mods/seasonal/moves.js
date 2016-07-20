@@ -394,14 +394,14 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 10,
+			chance: 40,
 			self: {
 				boosts: {
 					atk: 1,
 					def: 1,
-					spa: 1,
+					spa: 2,
 					spd: 1,
-					spe: 1,
+					spe: 2,
 				},
 			},
 		},
