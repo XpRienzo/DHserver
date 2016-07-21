@@ -4832,7 +4832,8 @@ exports.BattleMovedex = {
 		},
 		self: {
 			boosts: {
-				spe: -1,
+				def: -1,
+                                spd:-1,
 			},
 		},
 		willCrit:true,
