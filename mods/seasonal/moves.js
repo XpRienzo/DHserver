@@ -35,23 +35,13 @@ exports.BattleMovedex = {
 		self: {boosts: {spe:1, atk:1, def:1}},
 		secondary: false,
 		onHit: function (target, source) {
-			target.side.addSideCondition('toxicspikes', source, move);
+			target.side.addSideCondition('toxicspikes', source);
+			target.side.addSideCondition('toxicspikes', source);
+			source.side.addSideCondition('luckychant', source);
 			if (source.name === 'PI EddyChomp') this.add("c|&PI EddyChomp|Wait guys, powering up! Listen to this: https://www.youtube.com/watch?v=A0fAuX8jiPk while you're waiting! :)");
 		},
 		onModifyMove: function (move, pokemon, target) {
 			move.type = '???';
-		},
-		effect: {
-			duration: 5,
-			onStart: function (side) {
-				this.add('-sidestart', side, 'move: evalchomp'); // "The Lucky Chant shielded [side.name]'s team from critical hits!"
-			},
-			onCriticalHit: false,
-			onResidualOrder: 21,
-			onResidualSubOrder: 5,
-			onEnd: function (side) {
-				this.add('-sideend', side, 'move: evalchomp'); // "[side.name]'s team's Lucky Chant wore off!"
-			},
 		},
 		target: "normal",
 		type: "Normal",
