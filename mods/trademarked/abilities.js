@@ -282,13 +282,13 @@ exports.BattleAbilities = {
 		id: "destinybond",
 		name: "Destiny Bond",
 	},
-	'detect': {
+	/*'detect': {
 		onStart: function (source) {
 			this.useMove('Detect', source);
 		},
 		id: "detect",
 		name: "Detect",
-	},
+	},*/
 	'disable': {
 		onStart: function (source) {
 			this.useMove('Disable', source);
@@ -730,13 +730,13 @@ exports.BattleAbilities = {
 		id: "magneticflux",
 		name: "Magnetic Flux",
 	},
-	'matblock': {
+	/*'matblock': {
 		onStart: function (source) {
 			this.useMove('Mat Block', source);
 		},
 		id: "matblock",
 		name: "Mat Block",
-	},
+	},*/
 	'mefirst': {
 		onStart: function (source) {
 			this.useMove('Me First', source);
@@ -961,13 +961,13 @@ exports.BattleAbilities = {
 		id: "powertrick",
 		name: "Power Trick",
 	},
-	'protect': {
+	/*'protect': {
 		onStart: function (source) {
 			this.useMove('Protect', source);
 		},
 		id: "protect",
 		name: "Protect",
-	},
+	},*/
 	'psychup': {
 		onStart: function (source) {
 			this.useMove('Psych Up', source);
