@@ -1,6 +1,33 @@
 "use strict";
 
 exports.BattleMovedex = {
+	//Flygonerz
+	dragonshift: {
+		accuracy: 100,
+		category: "Status",
+		id: "dragonshift",
+		isNonstandard: true,
+		name: "Dragon Shift",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
+		selfSwitch: true,
+		self: {
+				boosts: {
+					atk: 2,
+					accuracy: 1,
+					spe: 2,
+				},
+			},
+		secondary: false,
+		onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Dragon Dance", source);
+			if (source.name === 'Eevee General') this.add("c|@Flygonerz|Get re(kt)ddy");
+		},
+		target: "normal",
+		type: "Normal",
+	},
 	// Eevee General
 	adminthings: {
 		accuracy: 100,
