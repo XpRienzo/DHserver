@@ -1322,6 +1322,228 @@ exports.Formats = [
 		},
 	},
 	{
+		name: "Dragon Heaven Super Staff Bros [Beta]",
+		desc: ["&bullet; The staff here becomes a Pokemon and battles!"],
+		section: "Randomized Metas",
+		mod: 'dhssb',
+		team: 'randomSeasonalMelee',
+		ruleset: ['Sleep Clause Mod', 'Freeze Clause Mod', 'HP Percentage Mod', 'Cancel Mod'],
+		onBegin: function () {
+			this.add("raw|Super Staff Bros. <b>MELEEEEEEEEEEEEEE</b>!!");
+			this.add('message', "SURVIVAL! GET READY FOR THE NEXT BATTLE!");
+
+			let globalRenamedMoves = {};
+			let customRenamedMoves = {};
+
+			let allPokemon = this.p1.pokemon.concat(this.p2.pokemon);
+			for (let i = 0, len = allPokemon.length; i < len; i++) {
+				let pokemon = allPokemon[i];
+				let last = pokemon.moves.length - 1;
+				if (pokemon.moves[last]) {
+					pokemon.moves[last] = toId(pokemon.set.signatureMove);
+					pokemon.moveset[last].move = pokemon.set.signatureMove;
+					pokemon.baseMoveset[last].move = pokemon.set.signatureMove;
+				}
+				for (let j = 0; j < pokemon.moveset.length; j++) {
+					let moveData = pokemon.moveset[j];
+					if (globalRenamedMoves[moveData.id]) {
+						pokemon.moves[j] = toId(pokemon.set.signatureMove);
+						moveData.move = globalRenamedMoves[moveData.id];
+						pokemon.baseMoveset[j].move = globalRenamedMoves[moveData.id];
+					}
+
+					let customRenamedSet = customRenamedMoves[toId(pokemon.name)];
+					if (customRenamedSet && customRenamedSet[moveData.id]) {
+						pokemon.moves[j] = toId(pokemon.set.signatureMove);
+						moveData.move = customRenamedSet[moveData.id];
+						pokemon.baseMoveset[j].move = customRenamedSet[moveData.id];
+					}
+				}
+			}
+		},
+		// Here we add some flavour or design immunities.
+		onImmunity: function (type, pokemon) {
+			if (toId(pokemon.name) === 'juanma' && type === 'Fire') {
+				this.add('-message', "Did you think fire would stop __him__? You **fool**!");
+				return false;
+			}
+		},
+		onNegateImmunity: function (pokemon, type) {
+			if (pokemon.volatiles['flipside']) return false;
+			const foes = pokemon.side.foe.active;
+			if (foes.length && foes[0].volatiles['samuraijack'] && pokemon.hasType('Dark') && type === 'Psychic') return false;
+		},
+		onEffectiveness: function (typeMod, target, type, move) {
+			if (!target.volatiles['flipside']) return;
+			if (move && move.id === 'retreat') return;
+			if (move && move.id === 'freezedry' && type === 'Water') return;
+			if (move && !this.getImmunity(move, type)) return 1;
+			return -typeMod;
+		},
+		// Hacks for megas changed abilities. This allow for their changed abilities.
+		onUpdate: function (pokemon) {
+			let name = toId(pokemon.name);
+			if (!this.shownTip) {
+				this.add('raw|<div class=\"broadcast-green\">Huh? But what do all these weird moves do??<br><b>Protip: Refer to the <a href="https://github.com/Zarel/Pokemon-Showdown/blob/129d35d5eefb295b1ec24f3e1985a586da3f049c/mods/seasonal/README.md">PLAYER\'S MANUAL</a>!</b></div>');
+				this.shownTip = true;
+			}
+		},
+		// Here we treat many things, read comments inside for information.
+		onSwitchInPriority: 1,
+		onSwitchIn: function (pokemon) {
+			let name = toId(pokemon.illusion ? pokemon.illusion.name : pokemon.name);
+			// Wonder Guard is available, but it curses you.
+			if (pokemon.getAbility().id === 'wonderguard' && pokemon.baseTemplate.baseSpecies !== 'Shedinja' && pokemon.baseTemplate.baseSpecies !== 'Kakuna') {
+				pokemon.addVolatile('curse', pokemon);
+				this.add('-message', pokemon.name + "'s Wonder Guard has cursed it!");
+			}
+
+			// Add here more hacky stuff for mega abilities.
+			// This happens when the mega switches in, as opposed to mega-evolving on the turn.
+			
+
+			// Edgy switch-in sentences go here.
+			// Sentences vary in style and how they are presented, so each Pokémon has its own way of sending them.
+			let sentences = [];
+			let sentence = '';
+			if(name === 'spandan') {
+				this.add('c|~Spandan|o shit waddup!');
+			}
+			if(name === 'classyz') {
+				this.add('c|%ClassyZ|pro tip: if u kill me go straight to hell do not pass go do not collect $200');
+			}
+			if(name === 'flygonerz') {
+				this.add('c|@Flygonerz|The Sand Dweller has arrived');
+			}
+			if(name === 'pieddychomp') {
+				this.add('c|&PI★EddyChomp|Hey guys, watch me KO this guy lmao xaa :)');
+			}
+			if(name === 'thegodofhaxorus') {
+				this.add('c|@The God of Haxorus|Hi! I\'m a **Hax**orus :3');
+			}
+			if(name === 'loominite') {
+				this.add('c|&Loominite|Okay, lets go :I');
+			}
+			if(name === 'charizard8888') {
+				this.add('c|&charizard8888|It\'s **Outragin\' Time !!**');
+			}
+			if(name === 'ransei') {
+				this.add('c|~Ransei|yo');
+			}
+			if(name === 'xprienzo') {
+ 				this.add('c|⚔XpRienzo ☑-☑|Wait, was I supposed to do something?');
+ 			}
+		},
+		onFaint: function (pokemon, source, effect) {
+			let name = toId(pokemon.name);
+			if (name === 'spandan') {
+				this.add('c|~Spandan|Gr8 b8, m8. I rel8, str8 appreci8, and congratul8. I r8 this b8 an 8/8. Plz no h8, I\'m str8 ir8. Cre8 more, can\'t w8. We should convers8, I won\'t ber8, my number is 8888888, ask for N8. No calls l8 or out of st8. If on a d8, ask K8 to loc8. Even with a full pl8, I always have time to communic8 so don\'t hesit8');
+			}
+			if(name === 'classyz') {
+				this.add('c|%ClassyZ|go straight to hell do not pass go do not collect $200');
+			}
+			if(name === 'flygonerz') {
+				this.add('c|@Flygonerz|Plox nerf, Ninten__doh__!');
+			}
+			if(name === 'pieddychomp') {
+				this.add("c|&PI★EddyChomp|Fuck this shit, I got rekt. I\'ll get MY REVENGE! RAWR!!!!");
+			}
+			if(name === 'loominite') {
+				this.add('c|&Loominite|eh, i\'m out!');
+			}
+			if (name === 'thegodofhaxorus') {
+				this.add('c|@The God of Haxorus|My own hax against me -3-');
+			}
+			if (name === 'charizard8888') {
+				this.add('c|&charizard8888|I\'m Outta here!');
+			}
+			if (name === 'xprienzo') {
+ 				this.add('c|⚔XpRienzo ☑-☑|Bleh');
+ 			}
+ 			if (name === 'ransei') {
+ 				this.add('c|~Ransei|ripsei');
+ 			}
+			
+		},
+		// Special switch-out events for some mons.
+		onSwitchOut: function (pokemon) {
+			let name = toId(pokemon.name);
+
+			if (!pokemon.illusion) {
+				if (name === 'hippopotas') {
+					this.add('-message', 'The sandstorm subsided.');
+				}
+			}
+
+			// Transform
+			if (pokemon.originalName) pokemon.name = pokemon.originalName;
+		},
+		onModifyPokemon: function (pokemon) {
+			let name = toId(pokemon.name);
+			// Enforce choice item locking on custom moves.
+			// qtrx only has one move anyway.
+			if (name !== 'qtrx') {
+				let moves = pokemon.moveset;
+				if (pokemon.getItem().isChoice && pokemon.lastMove === moves[3].id) {
+					for (let i = 0; i < 3; i++) {
+						if (!moves[i].disabled) {
+							pokemon.disableMove(moves[i].id, false);
+							moves[i].disabled = true;
+						}
+					}
+				}
+			}
+		},
+		// Specific residual events for custom moves.
+		// This allows the format to have kind of custom side effects and volatiles.
+		onResidual: function (battle) {
+			// Deal with swapping from qtrx's mega signature move.
+			let swapmon1, swapmon2;
+			let swapped = false;
+			for (let i = 1; i < 6 && !swapped; i++) {
+				swapmon1 = battle.sides[0].pokemon[i];
+				if (swapmon1.swapping && swapmon1.hp > 0) {
+					swapmon1.swapping = false;
+					for (let j = 1; j < 6; j++) {
+						swapmon2 = battle.sides[1].pokemon[j];
+						if (swapmon2.swapping && swapmon2.hp > 0) {
+							swapmon2.swapping = false;
+
+							this.add('message', "Link standby... Please wait.");
+							swapmon1.side = battle.sides[1];
+							swapmon1.fullname = swapmon1.side.id + ': ' + swapmon1.name;
+							swapmon1.id = swapmon1.fullname;
+							swapmon2.side = battle.sides[0];
+							swapmon2.fullname = swapmon2.side.id + ': ' + swapmon2.name;
+							swapmon2.id = swapmon2.fullname;
+							let oldpos = swapmon1.position;
+							swapmon1.position = swapmon2.position;
+							swapmon2.position = oldpos;
+							battle.sides[0].pokemon[i] = swapmon2;
+							battle.sides[1].pokemon[j] = swapmon1;
+
+							this.add("c|\u2605" + swapmon1.side.name + "|Bye-bye, " + swapmon2.name + "!");
+							this.add("c|\u2605" + swapmon2.side.name + "|Bye-bye, " + swapmon1.name + "!");
+							if (swapmon1.side.active[0].hp && swapmon2.side.active[0].hp) {
+								this.add('-anim', swapmon1.side.active, "Healing Wish", swapmon1.side.active);
+								this.add('-anim', swapmon2.side.active, "Aura Sphere", swapmon2.side.active);
+								this.add('message', swapmon2.side.name + " received " + swapmon2.name + "! Take good care of " + swapmon2.name + "!");
+								this.add('-anim', swapmon2.side.active, "Healing Wish", swapmon2.side.active);
+								this.add('-anim', swapmon1.side.active, "Aura Sphere", swapmon1.side.active);
+								this.add('message', swapmon1.side.name + " received " + swapmon1.name + "! Take good care of " + swapmon1.name + "!");
+							} else {
+								this.add('message', swapmon2.side.name + " received " + swapmon2.name + "! Take good care of " + swapmon2.name + "!");
+								this.add('message', swapmon1.side.name + " received " + swapmon1.name + "! Take good care of " + swapmon1.name + "!");
+							}
+							swapped = true;
+							break;
+						}
+					}
+				}
+			}
+		},
+	},
+	{
 		name: "[Seasonal] Super Staff Bros. Melee",
 		desc: ["&bullet; <a href=\"https://www.smogon.com/forums/threads/3491902/\">Seasonal Ladder</a>"],
 		section: "Randomized Metas",
