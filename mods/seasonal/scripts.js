@@ -5,7 +5,7 @@ exports.BattleScripts = {
 		let team = [];
 		let variant = (this.random(2) === 1);
 		let sets = {
-			/*'Acast': {
+			'Acast': {
 				species: 'Gourgeist-Super', ability: 'Prankster', item: 'Mental Herb', gender: 'M',
 				moves: ['willowisp', 'recover', ['seedbomb', 'shadowstrike'][this.random(2)]],
 				signatureMove: 'Needs More Screens',
@@ -184,26 +184,26 @@ exports.BattleScripts = {
 				moves: ['precipiceblades', ['recover', 'stockpile', 'swordsdance'][this.random(3)], 'extremespeed', 'explosion'],
 				signatureMove: "Forcewin",
 				evs: {hp:4, atk:252, spe:252}, nature: 'Adamant',
-			},*/
+			},
 			'charizard8888': {
 				species: 'Charizard-Mega-X', ability: 'Refrigerate', item: 'Charizardite X', gender: 'M',
 				moves: ['fakeout', 'extremespeed', 'earthquake'],
 				signatureMove: "ggm8",
 				evs: {spd:4, atk:252, spe:252}, nature: 'Jolly',
-			},/*
+			},
 			'Ciran': {
 				species: 'Rapidash', ability: 'Defiant', item: 'Life Orb', gender: 'N',
 				moves: ['vcreate', 'zenheadbutt', 'knockoff'],
 				signatureMove: "HMU",
 				evs: {atk:252, spd:4, spe:252}, ivs: {spa:0}, nature: 'Jolly', shiny: true,
-			},*/
+			},
 			'ClassyZ': {
 				species: 'Scizor', ability: 'Technician', item: 'Scizorite', gender: 'F', shiny: true,
 				moves: ['machpunch', 'bulletpunch', 'swordsdance'], name: 'classy',
 				signatureMove: 'Hyperspeed Punch',
 				evs: {atk:252, spd:4, spe:252}, nature: 'Adamant',
 			},
-			/*'Clefairy': {
+			'Clefairy': {
 				species: 'Exploud', ability: 'Suction Cups', item: 'Life Orb', gender: 'M',
 				moves: ['boomburst', 'focusblast', ['surf', 'fireblast', 'extrasensory', 'icebeam', 'shadowball', 'futuresight', 'mudslap'][this.random(7)]],
 				signatureMove: "Hyperspace Earrape",
@@ -610,7 +610,7 @@ exports.BattleScripts = {
 				moves: ['painsplit', 'earthpower', 'shadowball'],
 				signatureMove: "Grammar Hammer",
 				evs: {hp:4, spa:252, spe:252}, ivs: {atk:0}, nature: 'Timid',
-			},*/
+			},
 			'PI EddyChomp': {
 				species: 'Garchomp-Mega', ability: 'Epic Claws', item: 'Leftovers',
 				moves: ['precipiceblades', 'dragonclaw', 'sacredfire'],
@@ -665,7 +665,7 @@ exports.BattleScripts = {
 				signatureMove: "Swag Plant",
 				evs: {hp:252, atk:252, def:4}, nature: 'Adamant',
 			},
-			/*'rssp1': {
+			'rssp1': {
 				species: 'Rufflet', ability: 'Hustle', item: 'Life Orb', gender: 'M',
 				moves: ['return', 'bravebird', 'superpower'],
 				signatureMove: "Praise Rufflets",
@@ -748,13 +748,13 @@ exports.BattleScripts = {
 				moves: ['batonpass', 'ingrain', 'substitute'],
 				signatureMove: "Army of Mushrooms",
 				evs: {hp:252, def:128, spd:128}, nature: 'Sassy',
-			},*/
+			},
 			'Spandan': {
 			    species: 'Salamence', ability: 'Multiscale', item: 'Salamencite', gender: 'M',
 				moves: ['extremespeed', 'shiftgear', 'boomburst'],
 				signatureMove: "Yo MaMMa Joke",
 				evs: {atk:128, spa:128, spe:252}, nature: 'Naive',
-			},/*
+			},
 			'sparktrain': {
 				species: 'Seel', ability: 'Regenerator', item: 'Life Orb', gender: 'M',
 				moves: ['fakeout', 'extremespeed', 'precipiceblades'],
@@ -830,7 +830,7 @@ exports.BattleScripts = {
 				moves: ['encore', 'foulplay', 'batonpass'],
 				signatureMove: "Broken Mirror",
 				evs: {hp:252, spa:4, spe:252}, ivs: {atk:0}, nature: 'Timid',
-			},*/
+			},
 			'The God of Haxorus': {
 				species: 'Haxorus', ability: 'Blessed Hax', item: 'Life Orb', gender: 'M',
 				moves: ['ironhead', 'diamondstorm', 'sacredfire'],
@@ -866,7 +866,7 @@ exports.BattleScripts = {
 				moves: ['nightslash', 'drillrun', 'crosspoison'],
 				signatureMove: 'Holy Orders',
 				evs: {hp:248, atk:228, def:24, spd:8}, nature: 'Careful',
-			},/*
+			},
 			'useless trainer': {
 				species: 'Scatterbug', ability: 'Sturdy', item: 'Altarianite', gender: 'M',
 				moves: ['stickyweb', 'stringshot', 'tackle'],
@@ -890,7 +890,7 @@ exports.BattleScripts = {
 				moves: ['watershuriken', ['jumpkick', 'iciclecrash'][this.random(2)], 'waterfall'],
 				signatureMove: 'Fight to the Death',
 				evs: {atk:252, def:4, spe:252}, nature: 'Jolly',
-			},*/
+			},
 			'xfix': {
 				species: 'Xatu', ability: 'Magic Bounce', item: 'Focus Sash', gender: 'M',
 				moves: ['substitute', 'thunderwave', 'roost'],
@@ -920,7 +920,7 @@ exports.BattleScripts = {
 				moves: ['lunardance', 'fierydance', 'perishsong', 'petaldance', 'quiverdance'],
 				signatureMove: "Relic Song Dance",
 				evs: {hp:4, atk:252, spa:252}, nature: 'Quiet',
-			},/*
+			},
 			'Zebraiken': {
 				species: 'zebstrika', ability: 'Compound Eyes', item: 'Life Orb', gender: 'M',
 				moves: ['thunder', ['fire blast', 'focusblast', 'highjumpkick', 'headsmash'][this.random(3)], ['blizzard', 'iciclecrash', 'sleeppowder'][this.random(3)]],
@@ -938,7 +938,7 @@ exports.BattleScripts = {
 				moves: ['thunderwave', 'agility', 'zenheadbutt'],
 				signatureMove: "Standing Full",
 				evs: {atk:252, def:4, spe:252}, nature: 'Jolly',
-			},*/
+			},
 		};
 
 		// Generate the team randomly.
