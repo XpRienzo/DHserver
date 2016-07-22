@@ -2068,12 +2068,12 @@ exports.BattleMovedex = {
 		name: "Haxing Rage",
 		isNonstandard: true,
 		isViable: true,
-		basePower:130,
+		basePower:110,
 		category:"Physical",
 		type:"Dragon",
 		target:"normal",
 		secondary: {
-			chance: 40,
+			chance: 10,
 			self: {
 				boosts: {
 					atk: 1,
