@@ -424,7 +424,7 @@ exports.Formats = [
 
 		mod: 'trademarked',
 		ruleset: ['OU'],
-		banlist: ['Ignore Illegal Abilities','Roar','Whirlwind','Slaking','Regigigas'],
+		banlist: ['Ignore Illegal Abilities','Archeops','Slaking','Regigigas'],
 		
 	},
 		{
