@@ -635,6 +635,12 @@ exports.BattleScripts = {
 				signatureMove: "Legend's Ambition",
 				evs: {hp:248, atk:252, spa:252, spe:252}, nature: 'Mild',
 			},
+			'Flygonerz': {
+				species: 'Flygon', ability: 'Magic Claws', item: 'Focus Sash', gender: ['F'],shiny:true,
+				moves: ['dragonrush', 'thousandarrows', 'gunkshot'],
+				signatureMove: "Dragon Shift",
+				evs: {hp:4, atk:252, spe:252}, nature: 'Adamant',
+			},
 			'Raseri': {
 				species: 'Musharna', ability: 'Synchronize', item: 'Leftovers', gender: ['M', 'F', 'N'][this.random(3)],
 				moves: ['barrier', 'storedpower', 'moonblast'],
