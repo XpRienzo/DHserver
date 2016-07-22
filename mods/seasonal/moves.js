@@ -11,7 +11,6 @@ exports.BattleMovedex = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		selfSwitch: true,
 		self: {
 				boosts: {
 					atk: 2,
@@ -25,8 +24,8 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "Dragon Dance", source);
 			if (source.name === 'Eevee General') this.add("c|@Flygonerz|Get re(kt)ddy");
 		},
-		target: "normal",
-		type: "Normal",
+		target: "self",
+		type: "Dragon",
 	},
 	// Eevee General
 	adminthings: {
@@ -2970,7 +2969,6 @@ exports.BattleMovedex = {
 	},
 	//spandan
 	"yomammajoke": {
-		num: 613,
 		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
@@ -2985,6 +2983,12 @@ exports.BattleMovedex = {
 		drain: [3, 4],
 		secondary: false,
 		target: "any",
+		onPrepareHit: function (target, source, move) {
+			this.add('-anim', source, "Taunt", target);
+			if (source.name === 'spandan') {
+				this.add("c|~Spandan|"+["Yo mama so stupid she got locked in a grocery store and starved!", "Yo mama so fat that the Richie Rich had to pay for her lipo-suction operation.","Yo mama so fat it took her four weeks to die from lethal injection.","Yo mama so fat she sat on an iPhone and turned it into an iPad","Yo mama so fat when she stepped on the scale, the doctor said \"Holy Crap, That's My Phone Number\"","Yo mama so fat she uses Google Earth to take a selfie.","Yo mama so stupid when the computer said \"Press any key to continue\", she couldn't find the \"Any\" key.","Yo mama so bald, I could polish her head and take her bowling.","Yo mama is so ugly, Bob the builder said: 'i can't fix that.'","Yo mama so ugleh, the Illuminati closed its eye.","Yo mama so ugleh, Hello Kitty said goodbye.","Yo mama so ugly, One direction went the other direction."][this.random(12)]);
+			}
+		},
 		type: "Flying",
 		contestType: "Cool",
 	},
@@ -4868,7 +4872,7 @@ exports.BattleMovedex = {
 	},
 	legendsambition: {
 		accuracy: 100,
-		basePower: 120,
+		basePower: 130,
 		category: "Special",
 		id: "legendsambition",
 		isNonstandard: true,
@@ -4886,7 +4890,6 @@ exports.BattleMovedex = {
                                 spd:-1,
 			},
 		},
-		willCrit:true,
 		contestType:"Cool",
 		target: "normal",
 		type: "Dragon",
