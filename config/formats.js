@@ -424,20 +424,7 @@ exports.Formats = [
 
 		mod: 'trademarked',
 		ruleset: ['OU'],
-		banlist: ['Ignore Illegal Abilities','Archeops','Slaking','Regigigas'],
-		
-	},
-		{
-		name: "Trademarked2",
-		desc: [
-			"Pok&eacute;mon may use any Status move as an Ability, excluding those that are banned.",
-			"&bullet; <a href=\"https://www.smogon.com/forums/threads/3572949/\"Trademarked</a>",
-		],
-		section: "Other Metagames",
-
-		ruleset: ['OU'],
-		banlist: ['Slaking', 'Regigigas', 'Archeops'],
-		mod: 'trademarked2',
+		banlist: ['Archeops','Slaking','Regigigas'],
 		validateSet: function (set, teamHas) {
 			if (!this.validateSet(set, teamHas).length) return [];
 			let ability = this.tools.getAbility(set.ability);
