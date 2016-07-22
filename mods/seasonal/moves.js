@@ -2986,6 +2986,7 @@ exports.BattleMovedex = {
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "Taunt", target);
+			this.add('-anim', source, "Extreme Speed", target);
 			},
 		onHit: function (target, source) {
 			if (source.name === 'spandan') 
