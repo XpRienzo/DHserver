@@ -22,7 +22,7 @@ exports.BattleMovedex = {
 		onPrepareHit: function (target, source) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "Dragon Dance", source);
-			if (source.name === 'Eevee General') this.add("c|@Flygonerz|Get re(kt)ddy");
+			if (source.name === 'Flygonerz') this.add("c|@Flygonerz|Get re(kt)ddy");
 		},
 		target: "self",
 		type: "Dragon",
@@ -2984,11 +2984,13 @@ exports.BattleMovedex = {
 		secondary: false,
 		target: "any",
 		onPrepareHit: function (target, source, move) {
+			this.attrLastMove('[still]');
 			this.add('-anim', source, "Taunt", target);
-			if (source.name === 'spandan') {
+			},
+		onHit: function (target, source) {
+			if (source.name === 'spandan') 
 				this.add("c|~Spandan|"+["Yo mama so stupid she got locked in a grocery store and starved!", "Yo mama so fat that the Richie Rich had to pay for her lipo-suction operation.","Yo mama so fat it took her four weeks to die from lethal injection.","Yo mama so fat she sat on an iPhone and turned it into an iPad","Yo mama so fat when she stepped on the scale, the doctor said \"Holy Crap, That's My Phone Number\"","Yo mama so fat she uses Google Earth to take a selfie.","Yo mama so stupid when the computer said \"Press any key to continue\", she couldn't find the \"Any\" key.","Yo mama so bald, I could polish her head and take her bowling.","Yo mama is so ugly, Bob the builder said: 'i can't fix that.'","Yo mama so ugleh, the Illuminati closed its eye.","Yo mama so ugleh, Hello Kitty said goodbye.","Yo mama so ugly, One direction went the other direction."][this.random(12)]);
-			}
-		},
+				},
 		type: "Flying",
 		contestType: "Cool",
 	},
