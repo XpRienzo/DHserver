@@ -427,6 +427,28 @@ exports.Formats = [
 		banlist: ['Ignore Illegal Abilities','Roar','Whirlwind','Slaking','Regigigas'],
 		
 	},
+		{
+		name: "Trademarked2",
+		desc: [
+			"Pok&eacute;mon may use any Status move as an Ability, excluding those that are banned.",
+			"&bullet; <a href=\"https://www.smogon.com/forums/threads/3572949/\"Trademarked</a>",
+		],
+		section: "Other Metagames",
+
+		ruleset: ['OU'],
+		banlist: ['Slaking', 'Regigigas', 'Archeops'],
+		mod: 'trademarked2',
+		validateSet: function (set, teamHas) {
+			if (!this.validateSet(set, teamHas).length) return [];
+			let ability = this.tools.getAbility(set.ability);
+			let template = this.tools.getTemplate(set.species);
+			if (!set.moves.includes(ability.id) && !set.moves.includes(ability.name) && !this.checkLearnset(ability.id, template, {set: set})) {
+				template = Object.assign({}, template);
+				template.abilities = {0: ability.name};
+			}
+			return this.validateSet(set, teamHas, template);
+		},
+	},
 	{
 		name: "Gods and Followers",
 		desc: [
