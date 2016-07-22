@@ -196,8 +196,14 @@ exports.BattleScripts = {
 				moves: ['vcreate', 'zenheadbutt', 'knockoff'],
 				signatureMove: "HMU",
 				evs: {atk:252, spd:4, spe:252}, ivs: {spa:0}, nature: 'Jolly', shiny: true,
+			},*/
+			'ClassyZ': {
+				species: 'Scizor', ability: 'Technician', item: 'Scizorite', gender: 'F', shiny: true,
+				moves: ['machpunch', 'bulletpunch', 'swordsdance'], name: 'classy',
+				signatureMove: 'Hyperspeed Punch',
+				evs: {atk:252, spd:4, spe:252}, nature: 'Adamant',
 			},
-			'Clefairy': {
+			/*'Clefairy': {
 				species: 'Exploud', ability: 'Suction Cups', item: 'Life Orb', gender: 'M',
 				moves: ['boomburst', 'focusblast', ['surf', 'fireblast', 'extrasensory', 'icebeam', 'shadowball', 'futuresight', 'mudslap'][this.random(7)]],
 				signatureMove: "Hyperspace Earrape",
@@ -891,7 +897,7 @@ exports.BattleScripts = {
 				signatureMove: "xHaxlituh",
 				evs: {atk:252, spd:4, spe:252}, nature: 'Adamant',
 			},
-			'XpRienzo': {
+			'XpRienzo ☑-☑': {
  				species: 'Reshiram', ability: 'Adaptability', item: 'Charcoal', gender: 'M',
  				moves: ['fusionflare', 'spacialrend', 'voltswitch'],
  				signatureMove: "blehflame",
