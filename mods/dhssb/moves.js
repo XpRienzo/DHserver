@@ -21,6 +21,7 @@ exports.BattleMovedex = {
 				},
 			},
 		},
+                recoil : [2, 5],
 		onHit: function (target, source) {
 			if (this.random(2) === 1) target.trySetStatus('brn', source);
 		},
