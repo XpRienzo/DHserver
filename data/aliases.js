@@ -11,7 +11,7 @@ exports.BattleAliases = {
 	"rarelyused": "RU",
 	"neverused": "NU",
         "dhssb" :"Dragon Heaven Super Staff Bros [Beta]",
-        "ssb" " "[Seasonal] Super Staff Bros. Melee",
+        "ssb" : "[Seasonal] Super Staff Bros. Melee",
 	"Dubs": "Doubles OU",
 	"dou": "Doubles OU",
 	"doubles": "Doubles OU",
