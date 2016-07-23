@@ -207,7 +207,33 @@ evalchomp: {
 		target: "normal",
 		type: "Dragon",
 	},
-
+	"logicpower": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		defensiveCategory: "Special",
+		desc: "Deals damage to the target based on its Special Defense instead of Defense.",
+		shortDesc: "Damages target based on Sp. Def, not Def.",
+		id: "logicpower",
+		isViable: true,
+		name: "Logic Power",
+		pp: 10,
+		priority: 0,
+		self: {
+			boosts: {
+				def: 1,
+			},
+		},
+		onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Nasty Plot", target);
+		},
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Dark",
+		contestType: "Beautiful",
+	},
 	// Modified moves
 	"defog": {
 		inherit: true,
