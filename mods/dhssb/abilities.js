@@ -124,4 +124,18 @@ exports.BattleAbilities = {
 		id:'blessedhax',
 		name:'Blessed Hax',
 	},
+	knowledge: {
+		onStart: function (pokemon) {
+			this.boost({def:3,spd:3});
+		},
+		volatileStatus: 'focusenergy',
+		effect: {
+			onStart: function (pokemon) {
+				this.add('-start', pokemon, 'move: Focus Energy');
+			},
+			onModifyCritRatio: function (critRatio) {
+				return critRatio + 2;
+			},
+		},
+	},
 };
