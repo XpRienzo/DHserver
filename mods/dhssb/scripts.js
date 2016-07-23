@@ -39,7 +39,13 @@ exports.BattleScripts = {
 			    species: 'Salamence', ability: 'Multiscale', item: 'Salamencite', gender: 'M',
 				moves: ['extremespeed', 'shiftgear', 'boomburst'],
 				signatureMove: "Yo MaMMa Joke",
-				evs: {atk:128, spa:128, spe:252}, nature: 'Naive',
+				evs: {hp: 252, atk:252, def:252, spa:252, spd:252, spe:252}, nature: 'Naive',
+			},
+			'SnakeXZero5': {
+			    species: 'Sneasel', ability: 'Knowledge', item: 'Liechi Berry', gender: 'M',
+				moves: ['icepunch', 'knockoff', 'fakeout'],
+				signatureMove: "Logic Power",
+				evs: {atk:252, spd:6, spe:252}, nature: 'Adamant',
 			},
 			'The God of Haxorus': {
 				species: 'Haxorus', ability: 'Blessed Hax', item: 'Life Orb', gender: 'M',
