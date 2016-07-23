@@ -481,7 +481,7 @@ exports.Formats = [
 
 		mod: 'trademarked',
 		ruleset: ['OU'],
-		banlist: ['Archeops','Slaking','Regigigas'],
+		banlist: ['Slaking','Regigigas'],
 		validateSet: function (set, teamHas) {
 			if (!this.validateSet(set, teamHas).length) return [];
 			let ability = this.tools.getAbility(set.ability);
