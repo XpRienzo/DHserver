@@ -45,9 +45,8 @@ exports.BattleMovedex = {
 			secondary: {
 			chance: 40,
 			status: 'brn',
+			},
 		},
-		},
-                recoil : [2, 5],
 		onPrepareHit: function (target, source) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "Bolt Strike", target);
