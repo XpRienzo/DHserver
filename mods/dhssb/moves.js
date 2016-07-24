@@ -30,6 +30,28 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "V-Create", target);
 		},
 	},
+	sacredhax: {
+		accuracy:100,
+		pp:15,
+		id: "sacredhax",
+		name: "Sacred Hax",
+		isNonstandard: true,
+		isViable: true,
+		basePower:150,
+		category:"Physical",
+		type:"Psychic",
+		target:"normal",
+		secondary:{
+			secondary: {
+			chance: 40,
+			status: 'brn',
+			},
+		},
+		onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Bolt Strike", target);
+		},
+	},
 	hyperspeedpunch: {
 		accuracy: 100,
 		basePower: 35,

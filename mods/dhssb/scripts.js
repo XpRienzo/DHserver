@@ -23,6 +23,12 @@ exports.BattleScripts = {
 				signatureMove: "evalchomp",
 				evs: {atk:252, def:4, spe:252}, nature: 'Adamant',
 			},
+			'Digital Edge': {
+				species: 'Jirachi', ability: 'Serene Grace', item: 'Choice Scarf',
+				moves: ['iciclecrash', 'ironhead', 'uturn'],
+				signatureMove: "Sacred Hax",
+				evs: {atk:252, spd:4, spe:252}, nature: 'Adamant',
+			},
 			'Ransei': {
 				species: 'Rayquaza', ability: 'Wonder Breaker', item: 'Life Orb', gender: ['M'],shiny:true,
 				moves: ['dragonpulse', 'tailglow', 'dracometeor'],
