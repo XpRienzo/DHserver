@@ -97,8 +97,8 @@ exports.BattleAbilities = {
 		onStart: function (source) {
 			this.useMove('Baton Pass', source);
 		},
-		id: "roar",
-		name: "Roar",
+		id: "batonpass",
+		name: "Baton Pass",
 	},
 	'bellydrum': {
 		onStart: function (source) {
